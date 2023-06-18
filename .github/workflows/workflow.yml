@@ -1,0 +1,16 @@
+name: GitHub CD
+run-name: Deploying new changes
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build_deploy:
+    runs-on:
+      - self-hosted
+
+    steps:
+      - name: Builds the container
+        run: |
+          docker-compose build
+          docker-compose restart

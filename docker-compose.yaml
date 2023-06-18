@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  api:
+    container_name: tex-api
+    build: .
+    restart: always
+    stdin_open: true
+    tty: true
+    ports:
+      - '9361:9361'
+    env_file:
+      - priv/prod.env

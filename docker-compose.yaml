@@ -8,6 +8,6 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - '9361:9361'
+      - '<port>:<port>'
     env_file:
       - priv/prod.env

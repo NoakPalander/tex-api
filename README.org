@@ -2,15 +2,13 @@
 Creates a REST API for generating LaTex images given some mathematical string.
 
 ** Configuration
-Configure ~priv/prod.env~ by setting the ~TEX_PORT~ to some port you desire to use.
+Configure ~priv/prod.env~ by setting the ~TEX_PORT~ to some port you desire to use, and change ~docker-compose.yaml~ with the same port.
 
 ** Building and Deploying
 To build and deploy simply run
 #+begin_src sh
 $ docker-compose build && docker-compose up
 #+end_src
-
-This might take a while as we're using a Fedora image with ~texlive~.
 
 ** Dependencies
 *** Elixir

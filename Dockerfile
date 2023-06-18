@@ -1,8 +1,9 @@
-FROM fedora:latest
+FROM alpine:3.18.2
 
 COPY . /tex_api
 
 WORKDIR /tex_api
-RUN dnf -y install @development-tools git elixir erlang texlive-latex texlive-standalone ImageMagick
+
+RUN apk add elixir erlang texlive-full imagemagick
 RUN mix do local.hex --force, local.rebar --force, deps.get
 CMD ["iex", "-S", "mix", "run"]
